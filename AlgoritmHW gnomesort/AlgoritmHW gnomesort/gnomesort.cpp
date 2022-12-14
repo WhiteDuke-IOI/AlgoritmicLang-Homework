@@ -4,9 +4,12 @@ vector <int> gnomesort(vector <int> vec) {
 	auto clock_start = chrono::high_resolution_clock::now();
 
 	int i = 0;
+	int j = 0;
 	while (i < vec.size()) {
-		if (i == 0 || vec[i - 1] <= vec[i])
-			i++;
+		if (i == 0 || vec[i - 1] <= vec[i]) {
+			i = j;
+			j++;
+		}		
 		else {
 			int tmp = vec[i];
 			vec[i] = vec[i - 1];
